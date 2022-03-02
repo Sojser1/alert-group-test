@@ -1,6 +1,7 @@
 <template>
   <div class="">
-    <product-list />
+    <v-range-slider/>
+    <product-list/>
   </div>
 </template>
 
