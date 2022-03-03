@@ -1,23 +1,30 @@
 <template>
   <div class="product-list">
-    <product-card
-      v-for="(i, idx) in 9" :key="idx"/>
+    <product-filter
+    class="product-list__header"
+    />
+    <div class="product-list__cards">
+      <product-card
+        v-for="(i, idx) in 9" :key="idx"/>
+    </div>
   </div>
 
 </template>
 
-<script>
-import ProductCard from '../product-card/product-card.vue';
-
-export default {
-  components: { ProductCard },
-};
-</script>
+<script src="./product-list.js" />
 
 <style lang="scss" scoped>
 .product-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 30px;
+
+  .product-list__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    align-items: center;
+    justify-items: center;
+    overflow-y: scroll;
+    height: calc(100vh - 212px);
+  }
 }
 </style>

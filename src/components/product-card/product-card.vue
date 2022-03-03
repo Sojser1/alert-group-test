@@ -5,7 +5,7 @@
       width="270"
       height="365"
     >
-      <div class="product-card__title mt-5">
+      <div class="product-card__title mt-0">
         <p>3 этаж</p>
         <p>1 комната - 22.94м2</p>
       </div>
@@ -31,16 +31,16 @@
       <transition
         enter-active-class="animate__animated animate__flipInX"
       >
-      <div
-        class="product-card__actions"
-        v-if="hover"
-      >
+        <div
+          class="product-card__actions"
+          v-if="hover"
+        >
           <v-btn
             class="product-card__button"
           >
             ПОДРОБНЕЕ
           </v-btn>
-      </div>
+        </div>
       </transition>
     </v-card>
   </v-hover>
@@ -70,6 +70,10 @@
     line-height: 28px;
     color: #2C323A;
 
+    p {
+      margin-bottom: 0;
+    }
+
     p:nth-child(1) {
       opacity: 0.5;
     }
@@ -90,10 +94,12 @@
       height: 233px;
       transform: rotate(90deg);
     }
+
     .active-product-card {
       height: 200px;
       transition: .3s;
     }
+
     .active-product-image {
       width: 152px;
       height: 186px;
