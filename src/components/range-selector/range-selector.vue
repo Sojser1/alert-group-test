@@ -41,6 +41,10 @@
     .range-selector-input{
       max-height: 40px;
       max-width: 80px;
+      border: 1px solid #D8D8D8;
+      box-sizing: border-box;
+      border-radius: 5px;
+      outline: none;
     }
   }
 }

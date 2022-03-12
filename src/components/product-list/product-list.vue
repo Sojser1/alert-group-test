@@ -5,7 +5,9 @@
     />
     <div class="product-list__cards">
       <product-card
-        v-for="(i, idx) in 9" :key="idx"/>
+        v-for="product in products" :key="product.id"
+        :product="product"
+      />
     </div>
   </div>
 

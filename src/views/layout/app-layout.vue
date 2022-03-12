@@ -17,6 +17,7 @@
   margin: 30px auto 0;
   .layout-header {
     text-align: center;
+    margin-bottom: 50px;
   }
   .layout-body {
 

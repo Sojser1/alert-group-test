@@ -1,16 +1,24 @@
 <template>
   <div class="product-filter">
-    <range-selector />
+    <room-picker
+      :label="labelConstants.room"
+      v-model="filter.rooms"
+    />
     <range-selector
     :label="labelConstants.floor"
+    v-model="filter.floor"
+
     />
     <range-selector
     :label="labelConstants.area"
+    v-model="filter.area"
     />
     <range-selector
     :label="labelConstants.price"
+    v-model="filter.price"
     />
-    <range-selector />
+    <filter-actions
+    />
   </div>
 </template>
 

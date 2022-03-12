@@ -6,8 +6,8 @@
       height="365"
     >
       <div class="product-card__title mt-0">
-        <p>3 этаж</p>
-        <p>1 комната - 22.94м2</p>
+        <p>{{product.floor}} этаж</p>
+        <p>{{product.rooms}} комната - {{product.square}}м2</p>
       </div>
       <div
         class="product-card__main"
@@ -22,10 +22,10 @@
       </div>
       <div class="product-card__price">
         <p class="product-card__price-title">
-          2 729 860 р.
+          {{formatedPrice(product.price)}} р.
         </p>
         <p class="product-card__price-subtitle">
-          199 000 р. за м2
+          {{priceForOneMetre(product.price, product.square)}} р. за м²
         </p>
       </div>
       <transition
