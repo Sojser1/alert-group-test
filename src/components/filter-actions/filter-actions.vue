@@ -1,11 +1,17 @@
 <template>
   <div class="actions">
-    <v-btn class="actions-apply">
+    <v-btn
+      class="actions-apply"
+      @click="onBtnClick"
+    >
       Применить
     </v-btn>
-    <div class="actions-reset">
+    <button
+      class="actions-reset"
+      @click="$emit('reset-filter')"
+    >
       сбросить фильтр
-    </div>
+    </button>
   </div>
 </template>
 
@@ -17,20 +23,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .actions-apply{
+
+    .actions-apply {
       width: 201px;
       height: 40px;
       background: #70D24E;
       border-radius: 5px;
       color: white;
     }
-    .actions-reset{
+
+    .actions-reset {
       cursor: pointer;
       font-style: normal;
       font-weight: 700;
       font-size: 10px;
       line-height: 28px;
       position: relative;
+
       &::after {
         content: '';
         width: 100%;

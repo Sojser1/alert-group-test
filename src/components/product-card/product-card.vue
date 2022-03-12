@@ -13,20 +13,23 @@
         class="product-card__main"
         :class="hover ? 'active-product-card': ''"
       >
+        <div class="product-card__number" >
+          <span>№{{product['building_id']}}</span>
+        </div>
         <img
           class="product-card__image"
           :class="hover ? 'active-product-image': ''"
-          :src="image"
+          :src="imageSelect(product.plan)"
           alt="floor"
         />
       </div>
       <div class="product-card__price">
-        <p class="product-card__price-title">
+        <span class="product-card__price-title">
           {{formatedPrice(product.price)}} р.
-        </p>
-        <p class="product-card__price-subtitle">
+        </span>
+        <span class="product-card__price-subtitle">
           {{priceForOneMetre(product.price, product.square)}} р. за м²
-        </p>
+        </span>
       </div>
       <transition
         enter-active-class="animate__animated animate__flipInX"
@@ -87,7 +90,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     transition: .2s;
+    position: relative;
+
+    .product-card__number {
+      border-radius: 0 5px;
+      border: 1px solid #EBEBEB;
+      border-top: none;
+      border-right: none;
+      height: 30px;
+      width: 62px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: #2C323A;
+      }
+    }
 
     .product-card__image {
       width: 188px;
@@ -118,6 +146,7 @@
     flex-direction: column;
     line-height: 28px;
     font-weight: bold;
+    margin-top: 6px;
 
     .product-card__price-title {
       font-size: 20px;
@@ -128,6 +157,7 @@
       font-size: 12px;
       color: #a8a8a8;
       text-align: end;
+      margin-bottom: 10px;
     }
   }
 

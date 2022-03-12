@@ -44,4 +44,12 @@ export default {
       this.$emit('input', this.activeActions);
     },
   },
+  watch: {
+    value() {
+      this.room1k = false;
+      this.room2k = false;
+      this.room3k = false;
+      this.roomXS = false;
+    },
+  },
 };

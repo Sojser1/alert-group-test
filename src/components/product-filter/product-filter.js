@@ -21,5 +21,17 @@ export default {
     };
   },
   methods: {
+    applyFilter() {
+      this.$emit('apply-filter', this.filter);
+    },
+    resetFilter() {
+      this.filter = {
+        rooms: new Set(),
+        floor: [0, 99],
+        area: [0, 99],
+        price: [0, 99],
+      };
+      this.$emit('reset-filter');
+    },
   },
 };

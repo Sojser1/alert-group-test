@@ -1,4 +1,4 @@
-import image from '../../assets/floor.png';
+import imageSelect from '@/helpers/image-select';
 
 export default {
   props: {
@@ -9,7 +9,7 @@ export default {
   },
   data() {
     return {
-      image,
+      imageSelect,
     };
   },
   methods: {

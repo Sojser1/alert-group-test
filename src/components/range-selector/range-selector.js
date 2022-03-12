@@ -22,14 +22,19 @@ export default {
   },
   data() {
     return {
-      rangeValue: [0, 25],
+      rangeValue: [0, 99],
     };
   },
+  methods: {
+    onChangeSliderValue(value) {
+      this.$emit('input', value);
+    },
+  },
   watch: {
-    rangeValue: {
+    value: {
       deep: true,
-      handler() {
-        this.$emit('input', this.rangeValue);
+      handler(newVal) {
+        this.rangeValue = newVal;
       },
     },
   },
