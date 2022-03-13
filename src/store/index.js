@@ -5,12 +5,23 @@ import axios from 'axios';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  getters: {},
-  mutations: {},
+  state: {
+    products: null,
+  },
+  getters: {
+    getProducts: (state) => state.products,
+  },
+  mutations: {
+    setProducts(state, payload) {
+      state.products = payload;
+    },
+  },
   actions: {
-    retrieveProducts() {
-      return axios.get('http://localhost:3000/products');
+    retrieveProducts({ commit }) {
+      axios.get('http://localhost:3000/products')
+        .then((response) => {
+          commit('setProducts', response.data);
+        });
     },
   },
   modules: {},

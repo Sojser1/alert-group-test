@@ -13,7 +13,6 @@
 
 <style scoped lang="scss">
 .layout {
-  width: 1200px;
   margin: 30px auto 0;
   .layout-header {
     text-align: center;
